@@ -1,6 +1,8 @@
 # OpenDomain
 
-Check multiple domain names from PowerShell using RDAP, with WHOIS fallback when needed.
+OpenDomain checks batches of domain names from PowerShell, reducing the repeated lookup work involved in reviewing a list of possible names. Supply a domain directly, read a file, or use clipboard input, then collect the results in a timestamped log.
+
+It uses RDAP first and falls back to WHOIS when needed. Configurable concurrency and timeouts help you work through larger lists while accounting for slow registry responses. This is useful for an initial naming shortlist or a repeatable domain-checking workflow, with registrar confirmation still needed before registration decisions.
 
 ## Get started
 
