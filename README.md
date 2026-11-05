@@ -1,39 +1,27 @@
 # OpenDomain
 
-OpenDomain is a PowerShell-based bulk domain availability checker that uses RDAP first and falls back to WHOIS when needed.
+Check multiple domain names from PowerShell using RDAP, with WHOIS fallback when needed.
 
-## Features
+## Get started
 
-- Check multiple domains from a file, command-line input, or clipboard
-- Use concurrent requests with configurable timeout and thread count
-- Write results to a timestamped log file
-- Works with the bundled Windows WHOIS executable when available
-
-## Requirements
-
-- Windows
-- PowerShell 5.1 or later
-- Optional: the bundled `whois.exe` file in this repository for WHOIS fallback
-
-## Usage
-
-Run the script directly:
+Requires Windows and PowerShell 5.1 or later. Keep the bundled `whois.exe` beside the script for WHOIS fallback.
 
 ```powershell
-./opendomain.ps1 example.com
+.\opendomain.ps1 example.com
 ```
 
-Or with a file of domains:
+To check domains from a file:
 
 ```powershell
-./opendomain.ps1 -File domains.txt -Timeout 15 -Threads 10
+.\opendomain.ps1 -File domains.txt -Timeout 15 -Threads 10
 ```
 
-Use `-Help` for more details.
+## Input and output
 
-## Notes
+Domains can come from command-line input, a file, or the clipboard. Requests run concurrently with configurable timeouts, and results are written to a timestamped log in the script directory.
 
-The script reads domains from:
-- a file passed with `-File`
-- a command-line argument
-- clipboard contents when no input file is provided
+```powershell
+.\opendomain.ps1 -Help
+```
+
+Results depend on the registry services responding; confirm a domain's current status with a registrar before acting on it.
