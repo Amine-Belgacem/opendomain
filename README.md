@@ -4,6 +4,10 @@ OpenDomain checks batches of domain names from PowerShell, reducing the repeated
 
 It uses RDAP first and falls back to WHOIS when needed. Configurable concurrency and timeouts help you work through larger lists while accounting for slow registry responses. This is useful for an initial naming shortlist or a repeatable domain-checking workflow, with registrar confirmation still needed before registration decisions.
 
+![Screenshot of opendomain](images/help.png)
+
+*Actual output captured from running .\opendomain.ps1 -Help, presented as a readable help-output image.*
+
 ## Get started
 
 Requires Windows and PowerShell 5.1 or later. Keep the bundled `whois.exe` beside the script for WHOIS fallback.
